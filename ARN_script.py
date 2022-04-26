@@ -30,5 +30,3 @@ for f in features:
     ac_rounded = decimal.Decimal(ac)
       
 print("The ARN is:" + "    " + (final_arn))
-print("The size is","    " ,round(ha_rounded,2),"ha")
-print("The size is", "    " ,round(ac_rounded,2),"acres")
