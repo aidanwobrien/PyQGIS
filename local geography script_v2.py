@@ -20,25 +20,6 @@ for f in layer.getSelectedFeatures():
     arn = f['ARN']
     arn = str(arn)
     
-    #get the nhmp scores
-    forest_score = str(f['For_Score'])
-    natural_shoreline = str(f['NatShore_S'])
-    kettle_score = str(f['Kettle_Sco'])
-    lake_score = str(f['LA_Score'])
-    plan_score = str(f['Score_Gree'])
-    arch_score = str(f['Score_Arch'])
-    ansi_score = str(f['ANSI'])
-    cws_score = str(f['Score_CWS'])
-    riparian_score = str(f['Score_Ripa'])
-    psw_score = str(f['Score_PSW'])
-    wetland_score = str(f['Score_Wetl'])
-    pa_adjacent_score = str(f['Score_PA'])
-    size_score = str(f['Score_100a'])
-    sar_score = str(f['Score_Spec'])
-    wca_score = str(f['Wildlife_C'])
-    total_score = str(f['Total_Scor'])
-    priority = str(f['Priority'])
-    
     #make a geometry of the feature
     d = QgsDistanceArea()
     geom = f.geometry()
@@ -191,7 +172,6 @@ sarPath.removeSelection()
 
 print("Total Score: " + total_score)
 print("Priority: " + priority)
-print("Forest Score: " + forest_score + '\n' + "Shoreline: " + natural_shoreline + '\n' + "Kettle Lake: " + kettle_score + '\n' + "Lake: " + lake_score + '\n' + "Plan: " + plan_score + '\n' + "Arch: " + arch_score + '\n' + "ANSI: " + ansi_score + '\n' + "CWS: " + cws_score + '\n' + "Riparian: " + riparian_score + '\n' + "PSW: " + psw_score + '\n' +  "Wetland: " + wetland_score + '\n' +  "PA Adj: " + pa_adjacent_score + '\n' + "100+ac: " + size_score + '\n' +  "SAR: " + sar_score + '\n' +  "WCA: " + wca_score)
 
 data_dict = dict(ARN = np.array(arn), Hectares = np.array(ha), Acres = np.array(acres), Eco_District = np.array(eco_comb), Primary_Watershed = np.array(primwtr_name), Secondary_Watershed = np.array(scdwtr_name), Tertiary_Watershed = np.array(trtwtr_name),CA = np.array(ca_name) , Upper_Tier = np.array(ut_name), Lower_Tier = np.array(lt_name), Soil_Types = np.array(soil_list), SAR_observations = np.array([sar_list]), Forest_Score = np.array(forest_score), Wildlife_Conc_Area = np.array(wca_score), Shoreline_Score = np.array(natural_shoreline), Kettle_Lake_Score = np.array(kettle_score), Lake_Score = np.array(lake_score), Plan_Score = np.array(plan_score), Arch_Score = np.array(arch_score), ANSI = np.array(ansi_score), CWS_Score = np.array(cws_score), Riparian_Score = np.array(riparian_score), PSW_Score = np.array(psw_score), Wetland_Score = np.array(wetland_score), PA_Adjacent_Score = np.array(pa_adjacent_score), Size_Score = np.array(size_score), SAR_Score = np.array(sar_score), Total_Score = np.array(total_score), Priority = np.array(priority))
 
