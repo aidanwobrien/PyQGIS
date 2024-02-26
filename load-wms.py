@@ -6,6 +6,16 @@
 # Define the URL of the WMS service
 wms_url = "crs=EPSG:4326&format=image/png&layers=1&styles&url=https://ws.lioservices.lrc.gov.on.ca/arcgis2/services/LIO_OPEN_DATA/LIO_Open06/MapServer/WMSServer?request=GetCapabilities&service=WMS"
 
+# The url is constructed from these components, found in the WMS XML file
+# crs = 
+# format = 
+# layers =
+# styles = 
+# url = 
+## good resource here https://www.e-education.psu.edu/geog585/node/699
+## bbox could be useful for calling only features within a bbox
+
+
 # Create the WMS raster layer object
 wms_layer = QgsRasterLayer(wms_url, 'ORM Planning Area', 'WMS')
 
